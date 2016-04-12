@@ -11,14 +11,24 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.insertdate"
     ],
     "main": "./extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+        "commands": [
+    {
+        "command": "extension.insertdate",
+        "title": "Insert: current date and time"
+        }
+      ],
+        "keybindings": [
+        {
+          "command": "extension.insertdate",
+          "key": "ctrl+alt+l",
+          "mac": "cmd+alt+m",
+          "when": "editorTextFocus"
+        }
+      ]
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install"
